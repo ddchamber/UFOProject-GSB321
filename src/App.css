@@ -1,38 +1,134 @@
+/* Dark Mode Theme */
+body {
+  background-color: #121212; /* Dark background */
+  color: #bada55; /* Lime green text */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
+  background: #1e1e1e; /* Slightly lighter dark */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+  width: 80%;
+  max-width: 400px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #bada55; /* Lime green */
+  font-size: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #bada55;
+  background: #222;
+  color: #bada55;
+  border-radius: 5px;
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button {
+  background-color: #bada55;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #a8db42;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.alien-image {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 500px;  /* Adjust size as needed */
+  height: auto;
+  opacity: 0.8;  /* Slight transparency */
+}
+
+/* Glowing Title */
+.title-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.big-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: limegreen;
+  text-shadow: 0px 0px 15px limegreen;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+/* Search Box */
+.search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+input {
+  padding: 10px;
+  font-size: 1rem;
+  margin: 10px;
+  border: 2px solid limegreen;
+  border-radius: 5px;
+  background-color: black;
+  color: limegreen;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: limegreen;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px limegreen;
+}
+
+button:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Alien Image */
+.alien-image {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: auto;
+  opacity: 0.8;
 }
