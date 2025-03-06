@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Papa from 'papaparse';
+import { Amplify } from 'aws-amplify';
+import awsconfig from './aws-exports';
+import { Storage } from 'aws-amplify';
+
+Amplify.configure(awsconfig);
 
 function App() {
   const [city, setCity] = useState('');
@@ -11,19 +16,25 @@ function App() {
 
   // Load CSV file automatically when the app starts
   useEffect(() => {
-    fetch('https://ufodata2.s3.us-east-2.amazonaws.com/ufoData.csv')
-      .then(response => response.text())
-      .then(csvText => {
-        Papa.parse(csvText, {
-          header: true, // Assumes the first row contains column names
-          skipEmptyLines: true,
-          complete: (result) => {
-            setData(result.data);
-          }
-        });
+    // Get the CSV file from S3 using Amplify Storage
+    Storage.get('ufoData.csv', { level: 'public' })
+      .then((url) => {
+        fetch(url)
+          .then(response => response.text())
+          .then(csvText => {
+            Papa.parse(csvText, {
+              header: true, // Assumes the first row contains column names
+              skipEmptyLines: true,
+              complete: (result) => {
+                setData(result.data);
+              },
+            });
+          })
+          .catch(error => console.error("Error loading CSV:", error));
       })
-      .catch(error => console.error("Error loading CSV:", error));
+      .catch(error => console.error("Error accessing S3 CSV file:", error));
   }, []);
+  
 
   // Function to count occurrences of the entered city and set messages
   const handleSearch = () => {
