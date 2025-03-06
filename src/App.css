@@ -1,134 +1,107 @@
-/* Dark Mode Theme */
+/* Entire App Background */
 body {
-  background-color: #121212; /* Dark background */
-  color: #bada55; /* Lime green text */
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.App {
-  text-align: center;
-  background: #1e1e1e; /* Slightly lighter dark */
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
-  width: 80%;
-  max-width: 400px;
-}
-
-h1 {
-  color: #bada55; /* Lime green */
-  font-size: 24px;
-}
-
-input {
-  width: 80%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 2px solid #bada55;
-  background: #222;
-  color: #bada55;
-  border-radius: 5px;
-  outline: none;
-}
-
-button {
-  background-color: #bada55;
-  color: #121212;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #a8db42;
-}
-
-.result {
-  margin-top: 20px;
-  font-size: 18px;
-  font-weight: bold;
-
-}
-
-.alien-image {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 500px;  /* Adjust size as needed */
-  height: auto;
-  opacity: 0.8;  /* Slight transparency */
-}
-
-/* Glowing Title */
-.title-container {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.big-title {
-  font-size: 3rem;
-  font-weight: bold;
+  background-color: black;
   color: limegreen;
-  text-shadow: 0px 0px 15px limegreen;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+/* Big Glowing Title */
+.big-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  text-shadow: 0 0 10px limegreen, 0 0 20px limegreen;
+  margin-bottom: 5px;
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  color: white;
-  margin-bottom: 30px;
+  font-size: 1.5em;
+  text-shadow: 0 0 10px limegreen;
+  margin-bottom: 20px;
 }
 
-/* Search Box */
+/* Main Content Layout */
+.content-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* UFO Report Box */
+.ufo-box {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px limegreen;
+  width: 350px;
+  min-height: 250px;
+  text-align: left;
+  color: limegreen;
+  font-size: 1.1em;
+}
+
+/* Individual UFO Report */
+.ufo-report {
+  margin-bottom: 15px;
+}
+
+.ufo-report hr {
+  border: 0;
+  height: 2px;
+  background: limegreen;
+  margin: 8px 0;
+}
+
+/* Search Box Styling */
 .search-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px limegreen;
+  width: 350px;
 }
 
-input {
+/* Input & Button */
+.search-container input,
+.search-container button {
+  font-size: 1.2em;
   padding: 10px;
-  font-size: 1rem;
-  margin: 10px;
-  border: 2px solid limegreen;
   border-radius: 5px;
+  margin: 5px;
+  border: 2px solid limegreen;
   background-color: black;
   color: limegreen;
-  text-align: center;
+  box-shadow: 0 0 10px limegreen;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border: none;
-  border-radius: 5px;
+.search-container button {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.search-container button:hover {
   background-color: limegreen;
   color: black;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px limegreen;
 }
 
-button:hover {
-  background-color: white;
-  color: black;
+/* Message Output */
+.message {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-shadow: 0 0 10px limegreen;
+  margin-top: 15px;
 }
 
 /* Alien Image */
 .alien-image {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 100px;
-  height: auto;
-  opacity: 0.8;
+  bottom: 30px;
+  right: 380px;
+  width: 275px;
+  filter: drop-shadow(0 0 15px limegreen);
 }
