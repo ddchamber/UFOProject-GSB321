@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import Papa from 'papaparse';
-import { Amplify } from 'aws-amplify';
-import awsconfig from './aws-exports';
-
-Amplify.configure(awsconfig);
 
 function App() {
   const [city, setCity] = useState('');
